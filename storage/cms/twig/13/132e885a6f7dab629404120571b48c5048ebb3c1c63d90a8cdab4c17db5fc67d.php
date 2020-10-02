@@ -71,7 +71,7 @@ class __TwigTemplate_ec7ee297d845e758b70cf22c13299ca3230aeb462400d9fd3fcd84b53ba
 \t\t\t\t\t<a href=\"#\"><i class=\"icon-dribbble\"></i></a>
 \t\t\t\t\t<a href=\"#\"><i class=\"icon-youtube\"></i></a>
 \t\t\t\t</p>
-\t\t\t\t<p><small>© Hydrogen Free HTML5 Template. All Rights Reserved. <br>
+\t\t\t\t<p><small>© Trust Can. All Rights Reserved. <br>
 \t\t\t\t\tDesigned by: <a href=\"http://freehtml5.co/\" target=\"_blank\">FREEHTML5.co</a> | 
 \t\t\t\t\tImages by: <a href=\"http://pexels.com\" target=\"_blank\">Pexels</a> | 
 \t\t\t\t\tOctobered by: <a href=\"http://sliderweb.ru\" target=\"_blank\">SLIDER.WEB studio</a>
@@ -106,7 +106,7 @@ class __TwigTemplate_ec7ee297d845e758b70cf22c13299ca3230aeb462400d9fd3fcd84b53ba
 \t\t\t\t\t<a href=\"#\"><i class=\"icon-dribbble\"></i></a>
 \t\t\t\t\t<a href=\"#\"><i class=\"icon-youtube\"></i></a>
 \t\t\t\t</p>
-\t\t\t\t<p><small>© Hydrogen Free HTML5 Template. All Rights Reserved. <br>
+\t\t\t\t<p><small>© Trust Can. All Rights Reserved. <br>
 \t\t\t\t\tDesigned by: <a href=\"http://freehtml5.co/\" target=\"_blank\">FREEHTML5.co</a> | 
 \t\t\t\t\tImages by: <a href=\"http://pexels.com\" target=\"_blank\">Pexels</a> | 
 \t\t\t\t\tOctobered by: <a href=\"http://sliderweb.ru\" target=\"_blank\">SLIDER.WEB studio</a>

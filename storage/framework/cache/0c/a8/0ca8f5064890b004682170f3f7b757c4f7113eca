@@ -1,0 +1,6 @@
+1601633665a:1:{s:8:"post.htm";a:9:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:100:"title = "Post"
+url = "/post/:slug"
+layout = "General_template"
+is_hidden = 0
+==
+{% partial 'post' %}";s:5:"mtime";i:1601624390;s:6:"markup";s:20:"{% partial 'post' %}";s:4:"code";N;s:5:"title";s:4:"Post";s:3:"url";s:11:"/post/:slug";s:6:"layout";s:16:"General_template";s:9:"is_hidden";s:1:"0";}}

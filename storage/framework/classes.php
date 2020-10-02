@@ -19,4 +19,6 @@
   'RainLab\\Blog\\Components\\Categories' => 'plugins/rainlab/blog/components/Categories.php',
   'RainLab\\Blog\\Components\\RssFeed' => 'plugins/rainlab/blog/components/RssFeed.php',
   'RainLab\\Blog\\Models\\Settings' => 'plugins/rainlab/blog/models/Settings.php',
+  'cms\\Controllers\\themeoptions' => 'modules/cms/controllers/themeoptions.php',
+  'rainlab\\blog\\Controllers\\categories' => 'plugins/rainlab/blog/controllers/categories.php',
 );

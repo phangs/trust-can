@@ -29,13 +29,13 @@ class __TwigTemplate_e8c0c0bebc3abfb14cc013c119324c9c21a9a68151436ff8566374aa94e
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array();
+        $tags = array("component" => 19);
         $filters = array("escape" => 3);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                [],
+                ['component'],
                 ['escape'],
                 []
             );
@@ -67,11 +67,13 @@ class __TwigTemplate_e8c0c0bebc3abfb14cc013c119324c9c21a9a68151436ff8566374aa94e
         echo "</a></h1>
 \t<ul>
 \t\t<li class=\"active\"><a href=\"/\">Home</a></li>
-\t\t<li><a href=\"/about/\">About</a></li>
-\t\t<li><a href=\"/pricing/\">Pricing</a></li>
-\t\t<li><a href=\"/contact/\">Contact</a></li>
+\t\t";
+        // line 7
+        echo "\t\t";
+        // line 8
+        echo "\t\t<li><a href=\"/contact/\">Author</a></li>
 \t</ul>
-\t<h3 class=\"fh5co-lead\">Connect with us</h3>
+\t<h3 class=\"fh5co-lead\">Connect</h3>
 \t<p class=\"fh5co-social-icons\">
 \t\t<a href=\"#\"><i class=\"icon-twitter\"></i></a>
 \t\t<a href=\"#\"><i class=\"icon-facebook\"></i></a>
@@ -79,7 +81,14 @@ class __TwigTemplate_e8c0c0bebc3abfb14cc013c119324c9c21a9a68151436ff8566374aa94e
 \t\t<a href=\"#\"><i class=\"icon-dribbble\"></i></a>
 \t\t<a href=\"#\"><i class=\"icon-youtube\"></i></a>
 \t</p>
-</div>";
+
+";
+        // line 19
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("blogCategories"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
+        // line 20
+        echo "</div>";
     }
 
     public function getTemplateName()
@@ -94,7 +103,7 @@ class __TwigTemplate_e8c0c0bebc3abfb14cc013c119324c9c21a9a68151436ff8566374aa94e
 
     public function getDebugInfo()
     {
-        return array (  66 => 3,  62 => 1,);
+        return array (  91 => 20,  87 => 19,  74 => 8,  72 => 7,  66 => 3,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -104,11 +113,11 @@ class __TwigTemplate_e8c0c0bebc3abfb14cc013c119324c9c21a9a68151436ff8566374aa94e
 \t<h1 class=\"fh5co-logo\"><a class=\"navbar-brand\" href=\"/\">{{ this.theme.site_name }}</a></h1>
 \t<ul>
 \t\t<li class=\"active\"><a href=\"/\">Home</a></li>
-\t\t<li><a href=\"/about/\">About</a></li>
-\t\t<li><a href=\"/pricing/\">Pricing</a></li>
-\t\t<li><a href=\"/contact/\">Contact</a></li>
+\t\t{#<li><a href=\"/about/\">Blog</a></li>#}
+\t\t{#<li><a href=\"/pricing/\">Pricing</a></li>#}
+\t\t<li><a href=\"/contact/\">Author</a></li>
 \t</ul>
-\t<h3 class=\"fh5co-lead\">Connect with us</h3>
+\t<h3 class=\"fh5co-lead\">Connect</h3>
 \t<p class=\"fh5co-social-icons\">
 \t\t<a href=\"#\"><i class=\"icon-twitter\"></i></a>
 \t\t<a href=\"#\"><i class=\"icon-facebook\"></i></a>
@@ -116,6 +125,8 @@ class __TwigTemplate_e8c0c0bebc3abfb14cc013c119324c9c21a9a68151436ff8566374aa94e
 \t\t<a href=\"#\"><i class=\"icon-dribbble\"></i></a>
 \t\t<a href=\"#\"><i class=\"icon-youtube\"></i></a>
 \t</p>
+
+{% component 'blogCategories' %}
 </div>", "/Users/wpineda/Documents/Development/Sites/trust-can.ml/themes/sliderweb-sliderweb_0002_hydrogen-theme/partials/menu.htm", "");
     }
 }

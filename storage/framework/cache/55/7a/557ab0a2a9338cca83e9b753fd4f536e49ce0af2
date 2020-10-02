@@ -1,0 +1,94 @@
+1601633690a:1:{s:8:"post.htm";a:7:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:1477:"[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "index"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "index"
+==
+{% set post = blogPost.post %}
+
+<div class="container post-body">
+<div class="row">
+{% if post.featured_images.count %}
+    <div class="featured-images text-center">
+        {% for image in post.featured_images %}
+            <p>
+                <img
+                    data-src="{{ image.filename }}"
+                    src="{{ image.path }}"
+                    alt="{{ image.description }}"
+                    style="max-width: 100%" />
+            </p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<h1>{{ post.title | raw }}</h1>
+<div class="content">{{ post.content_html | raw }}</div>
+</div>
+</div>
+
+<div class="container text-center">
+<p class="info">
+    {% if post.categories.count %}
+        {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+
+        {{ 'rainlab.blog::lang.post.posted_byline' | trans({
+            date: post.published_at | date('rainlab.blog::lang.post.date_format' | trans),
+            categories: categoryLinks
+        }) }}
+    {% else %}
+        {{ 'rainlab.blog::lang.post.posted_byline_no_categories' | trans({
+            date: post.published_at | date('rainlab.blog::lang.post.date_format'|trans)
+        }) }}
+    {% endif %}
+</p>
+</div>
+
+<div class="container">
+{% component 'blogCategories' %}
+</div>";s:5:"mtime";i:1601628900;s:6:"markup";s:1340:"{% set post = blogPost.post %}
+
+<div class="container post-body">
+<div class="row">
+{% if post.featured_images.count %}
+    <div class="featured-images text-center">
+        {% for image in post.featured_images %}
+            <p>
+                <img
+                    data-src="{{ image.filename }}"
+                    src="{{ image.path }}"
+                    alt="{{ image.description }}"
+                    style="max-width: 100%" />
+            </p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<h1>{{ post.title | raw }}</h1>
+<div class="content">{{ post.content_html | raw }}</div>
+</div>
+</div>
+
+<div class="container text-center">
+<p class="info">
+    {% if post.categories.count %}
+        {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+
+        {{ 'rainlab.blog::lang.post.posted_byline' | trans({
+            date: post.published_at | date('rainlab.blog::lang.post.date_format' | trans),
+            categories: categoryLinks
+        }) }}
+    {% else %}
+        {{ 'rainlab.blog::lang.post.posted_byline_no_categories' | trans({
+            date: post.published_at | date('rainlab.blog::lang.post.date_format'|trans)
+        }) }}
+    {% endif %}
+</p>
+</div>
+
+<div class="container">
+{% component 'blogCategories' %}
+</div>";s:4:"code";N;s:8:"blogPost";a:2:{s:4:"slug";s:11:"{{ :slug }}";s:12:"categoryPage";s:5:"index";}s:14:"blogCategories";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"0";s:12:"categoryPage";s:5:"index";}}}

@@ -31,13 +31,13 @@ class __TwigTemplate_f748a991770c02c8c3d373bf9df2d9d099cdf120e86aa30fb72ab84d8bc
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 3);
         $filters = array("slice" => 5, "escape" => 6);
-        $functions = array();
+        $functions = array("str_limit" => 9);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
                 ['slice', 'escape'],
-                []
+                ['str_limit']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -78,28 +78,34 @@ class __TwigTemplate_f748a991770c02c8c3d373bf9df2d9d099cdf120e86aa30fb72ab84d8bc
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
                 echo "\" class=\"image-popup fh5co-board-img\"><img src=\"";
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
-                echo "\" alt=\"\" /></a>
-                <a href=\"post.url\"><h2>";
-                // line 7
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, true, 7), 7, $this->source), "html", null, true);
+                echo "\" alt=\"";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "summary", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
+                echo "\" /></a>
+                <div class=\"post-list-summary\">
+                <a href=\"post/";
+                // line 8
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, true, 8), 8, $this->source), "html", null, true);
+                echo "\"><h2>";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, true, 8), 8, $this->source), "html", null, true);
                 echo "</h2></a>
                 <p>";
-                // line 8
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "summary", [], "any", false, false, true, 8), 8, $this->source), "html", null, true);
+                // line 9
+                echo call_user_func_array($this->env->getFunction('str_limit')->getCallable(), ["limit", $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "summary", [], "any", false, false, true, 9), 9, $this->source), 100, " ... Read More"]);
                 echo "</p>
+                </div>
     \t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 10
+            // line 12
             echo "    \t</div> 
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 12
+        // line 14
         echo "
 </div>";
     }
@@ -116,7 +122,7 @@ class __TwigTemplate_f748a991770c02c8c3d373bf9df2d9d099cdf120e86aa30fb72ab84d8bc
 
     public function getDebugInfo()
     {
-        return array (  103 => 12,  96 => 10,  88 => 8,  84 => 7,  77 => 6,  73 => 5,  70 => 4,  66 => 3,  62 => 1,);
+        return array (  109 => 14,  102 => 12,  93 => 9,  87 => 8,  77 => 6,  73 => 5,  70 => 4,  66 => 3,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -126,9 +132,11 @@ class __TwigTemplate_f748a991770c02c8c3d373bf9df2d9d099cdf120e86aa30fb72ab84d8bc
     {% for post in posts %}
     <div class=\"item\">
     \t\t{% for image in post.featured_images|slice(0,1) %}
-                <a href=\"{{ image.path }}\" class=\"image-popup fh5co-board-img\"><img src=\"{{ image.path }}\" alt=\"\" /></a>
-                <a href=\"post.url\"><h2>{{ post.title }}</h2></a>
-                <p>{{ post.summary }}</p>
+                <a href=\"{{ image.path }}\" class=\"image-popup fh5co-board-img\"><img src=\"{{ image.path }}\" alt=\"{{ post.summary }}\" /></a>
+                <div class=\"post-list-summary\">
+                <a href=\"post/{{ post.slug }}\"><h2>{{ post.title }}</h2></a>
+                <p>{{ str_limit(post.summary, 100, ' ... Read More') }}</p>
+                </div>
     \t\t{% endfor %}
     \t</div> 
     {% endfor %}
