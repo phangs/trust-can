@@ -1,0 +1,10 @@
+1601621714a:1:{s:9:"index.htm";a:11:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:246:"title = "Home"
+url = "/"
+layout = "General_template"
+meta_title = "SLIDER.WEB studio"
+meta_description = "Разработка, дизайн, инфраструктура."
+is_hidden = 0
+==
+{% partial 'post-list' %}
+{#{% partial 'portfolio' %}#}";s:5:"mtime";i:1601621111;s:6:"markup";s:56:"{% partial 'post-list' %}
+{#{% partial 'portfolio' %}#}";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:16:"General_template";s:10:"meta_title";s:17:"SLIDER.WEB studio";s:16:"meta_description";s:65:"Разработка, дизайн, инфраструктура.";s:9:"is_hidden";s:1:"0";}}

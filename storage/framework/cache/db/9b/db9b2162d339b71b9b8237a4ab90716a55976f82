@@ -1,0 +1,6 @@
+1601621563a:1:{s:12:"contacts.htm";a:9:{s:8:"fileName";s:12:"contacts.htm";s:7:"content";s:104:"title = "Contacts"
+url = "/contact"
+layout = "General_template"
+is_hidden = 0
+==
+{%partial 'contacts' %}";s:5:"mtime";i:1601617633;s:6:"markup";s:23:"{%partial 'contacts' %}";s:4:"code";N;s:5:"title";s:8:"Contacts";s:3:"url";s:8:"/contact";s:6:"layout";s:16:"General_template";s:9:"is_hidden";s:1:"0";}}
